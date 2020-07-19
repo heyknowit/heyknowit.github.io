@@ -4,12 +4,21 @@
     <title>Git基础操作指北基础篇</title>
     <url>/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/</url>
     <content><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><ul>
-<li>git基本操作普及，毕竟小可爱总是害怕把代码玩坏了。。</li>
-<li>什么，你现在还没有 github 账号？ 现在立刻马上申请一个吧。</li>
+<li><p>git基本操作普及，毕竟小可爱总是害怕把代码玩坏了。。</p>
+</li>
+<li><p>什么，你现在还没有 github 账号？ 现在立刻马上整一个。</p>
+<blockquote>
+<ul>
 <li><a href="https://github.com" target="_blank" rel="noopener">Github</a>   国外托管，速度可能有点慢，但这都不是事儿，好用就完事了</li>
 <li><a href="https://gitee.com/" target="_blank" rel="noopener">码云</a>   国内的代码托管平台，速度杠杠的</li>
-<li>本入门操作指北的操作环境为 git + idea。（其实只要搞明白了命令行的用法，ui工具都能速通，相信我）</li>
 </ul>
+</blockquote>
+</li>
+<li><p>本入门操作指北的操作环境为 git + idea。（其实只要搞明白了命令行的用法，ui工具都能速通，相信我）</p>
+</li>
+</ul>
+<a id="more"></a>
+
 <h2 id="git-结构"><a href="#git-结构" class="headerlink" title="git 结构"></a>git 结构</h2><ul>
 <li><p>这里得简单的说一下 git的结构了，便于理解后续的操作</p>
 </li>

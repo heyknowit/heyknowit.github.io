@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hey, know it!</title>
+  
+  <subtitle>Hey, know it!</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.heyknowit.com/"/>
+  <updated>2020-07-19T15:58:38.716Z</updated>
+  <id>http://www.heyknowit.com/</id>
+  
+  <author>
+    <name>heyknowit</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git基础操作指北基础篇</title>
+    <link href="http://www.heyknowit.com/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    <id>http://www.heyknowit.com/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/</id>
+    <published>2020-07-13T08:33:57.000Z</published>
+    <updated>2020-07-19T15:58:38.716Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;git基本操作普及，毕竟小可爱总是害怕把代码玩坏了。。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;什么，你现在还没有 github 账号？ 现在立刻马上整一个。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Github&lt;/a&gt;   国外托管，速度可能有点慢，但这都不是事儿，好用就完事了&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://gitee.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;码云&lt;/a&gt;   国内的代码托管平台，速度杠杠的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;本入门操作指北的操作环境为 git + idea。（其实只要搞明白了命令行的用法，ui工具都能速通，相信我）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="DevOps" scheme="http://www.heyknowit.com/categories/DevOps/"/>
+    
+    
+      <category term="Git" scheme="http://www.heyknowit.com/tags/Git/"/>
+    
+  </entry>
+  
+</feed>
