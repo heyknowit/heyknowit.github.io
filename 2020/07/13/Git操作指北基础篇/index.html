@@ -13,7 +13,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    Git基础操作指北基础篇 |  Hey, know it!
+    Git操作指北基础篇 |  Hey, know it!
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -60,7 +60,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Git基础操作指北基础篇
+  Git操作指北基础篇
 </h1>
  
 
@@ -88,7 +88,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">10 min</span>
+            <span class="post-count">11 min</span>
         </span>
     </span>
 </div>
@@ -104,7 +104,7 @@
     <div class="article-entry" itemprop="articleBody">
        
   <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><ul>
-<li><p>git基本操作普及，毕竟小可爱总是害怕把代码玩坏了。。</p>
+<li><p>git基本操作普及，妈妈再也不用担心我代码出问题了。</p>
 </li>
 <li><p>什么，你现在还没有 github 账号？ 现在立刻马上整一个。</p>
 <blockquote>
@@ -190,9 +190,6 @@
 </blockquote>
 </li>
 </ul>
-<h3 id="贮藏"><a href="#贮藏" class="headerlink" title="贮藏"></a>贮藏</h3><p>当你在进行着一项任务的开发，突然另一个任务有紧急的事情，需要切换到另一个分支怎么办？难道就这样被你征服，咳咳，就这样提交上去？这怎么可以忍受。没错，此处有个神器，可以帮你解决这个问题，git 的贮藏功能。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">git stash push -m "save message"  # 执行存储时，添加备注，方便查找，只有 git stash 也可以进行贮藏，但查找时很不方便</span><br><span class="line"></span><br><span class="line">git stash list  # 查看stash了哪些存储</span><br><span class="line"></span><br><span class="line">git stash show  # 显示第一个贮藏中哪些文件做了改动(只显示文件名称)</span><br><span class="line">git stash show stash@&#123;1&#125; # 显示第二个贮藏中哪些文件做了改动(只显示文件名称)</span><br><span class="line">git stash show stash@&#123;$num&#125; # 显示第 num + 1 个贮藏中哪些文件做了改动(只显示文件名称)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git stash show -p  # 显示第一个贮藏的具体改动</span><br><span class="line">git stash show stash@&#123;1&#125; -p # 显示第二个贮藏的改动</span><br><span class="line">git stash show stash@&#123;$num&#125; -p # 显示第 num + 1 个贮藏的改动，num 从0开始</span><br><span class="line"></span><br><span class="line">git stash apply  # 应用第一个存储,但不会把贮藏从贮藏列表中删除</span><br><span class="line">git stash apply stash@&#123;1&#125; # 应用第二个贮藏</span><br><span class="line">git stash apply stash@&#123;$num&#125; # 应用第 num + 1 个贮藏，num 从0开始</span><br><span class="line"></span><br><span class="line">git stash pop # 命令恢复之前缓存的工作目录，将缓存堆栈中第一个stash删除，并将对应修改应用到当前的工作目录下</span><br><span class="line">git stash pop stash@&#123;1&#125; # 应用并删除第二个贮藏</span><br><span class="line">git stash pop stash@&#123;$num&#125;  # 应用并删除第 num + 1 个贮藏，num 从0开始</span><br><span class="line"></span><br><span class="line">git stash drop stash@&#123;$num&#125;  # 丢弃stash@&#123;$num&#125;存储，从列表中删除这个存储</span><br><span class="line"></span><br><span class="line">git stash clear  # 删除所有缓存的stash</span><br><span class="line"></span><br><span class="line">git stash branch newbranchname # 非常赞的一个功能。以你指定的分支名(newbranchname)创建一个新分支，检出贮藏工作时所在的提交，重新在那应用工作，然后在应用成功后丢弃贮藏</span><br></pre></td></tr></table></figure>
-
 <h3 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h3><ul>
 <li><p>git add就是将<strong>工作区</strong>的修改缓存在<strong>暂存区</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add . # 将当前目录的所有文件都缓存到暂存区</span><br><span class="line">git add file # 将制定文件缓存到暂存区</span><br></pre></td></tr></table></figure>
@@ -296,7 +293,10 @@
 <p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/640-20200719181346143.gif" alt="img"></p>
 <h3 id="拉取"><a href="#拉取" class="headerlink" title="拉取"></a>拉取</h3><p>git pull 命令其实是 git fetch 和 git merge 命令的组合。他会将远端的修改拉取过来并合并到本地分支中</p>
 <p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/640-20200719181350408.gif" alt="img"></p>
-<h2 id="Git-一般操作流程"><a href="#Git-一般操作流程" class="headerlink" title="Git 一般操作流程"></a>Git 一般操作流程</h2><ul>
+<h3 id="贮藏"><a href="#贮藏" class="headerlink" title="贮藏"></a>贮藏</h3><p>当你在进行着一项任务的开发，突然另一个任务有紧急的事情，需要切换到另一个分支怎么办？难道就这样被你征服，咳咳，就这样提交上去？这怎么可以忍受。没错，此处有个神器，可以帮你解决这个问题，git 的贮藏功能。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">git stash push -m "save message"  # 执行存储时，添加备注，方便查找，只有 git stash 也可以进行贮藏，但查找时很不方便</span><br><span class="line"></span><br><span class="line">git stash list  # 查看stash了哪些存储</span><br><span class="line"></span><br><span class="line">git stash show  # 显示第一个贮藏中哪些文件做了改动(只显示文件名称)</span><br><span class="line">git stash show stash@&#123;1&#125; # 显示第二个贮藏中哪些文件做了改动(只显示文件名称)</span><br><span class="line">git stash show stash@&#123;$num&#125; # 显示第 num + 1 个贮藏中哪些文件做了改动(只显示文件名称)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git stash show -p  # 显示第一个贮藏的具体改动</span><br><span class="line">git stash show stash@&#123;1&#125; -p # 显示第二个贮藏的改动</span><br><span class="line">git stash show stash@&#123;$num&#125; -p # 显示第 num + 1 个贮藏的改动，num 从0开始</span><br><span class="line"></span><br><span class="line">git stash apply  # 应用第一个存储,但不会把贮藏从贮藏列表中删除</span><br><span class="line">git stash apply stash@&#123;1&#125; # 应用第二个贮藏</span><br><span class="line">git stash apply stash@&#123;$num&#125; # 应用第 num + 1 个贮藏，num 从0开始</span><br><span class="line"></span><br><span class="line">git stash pop # 命令恢复之前缓存的工作目录，将缓存堆栈中第一个stash删除，并将对应修改应用到当前的工作目录下</span><br><span class="line">git stash pop stash@&#123;1&#125; # 应用并删除第二个贮藏</span><br><span class="line">git stash pop stash@&#123;$num&#125;  # 应用并删除第 num + 1 个贮藏，num 从0开始</span><br><span class="line"></span><br><span class="line">git stash drop stash@&#123;$num&#125;  # 丢弃stash@&#123;$num&#125;存储，从列表中删除这个存储</span><br><span class="line"></span><br><span class="line">git stash clear  # 删除所有缓存的stash</span><br><span class="line"></span><br><span class="line">git stash branch newbranchname # 非常赞的一个功能。以你指定的分支名(newbranchname)创建一个新分支，检出贮藏工作时所在的提交，重新在那应用工作，然后在应用成功后丢弃贮藏</span><br></pre></td></tr></table></figure>
+
+<h3 id><a href="#" class="headerlink" title></a></h3><h2 id="Git-一般操作流程"><a href="#Git-一般操作流程" class="headerlink" title="Git 一般操作流程"></a>Git 一般操作流程</h2><ul>
 <li><p>从远端拉取分支/创建分支。</p>
 </li>
 <li><p>创建新分支，并同步关联到远程分支。</p>
@@ -329,11 +329,10 @@
 <li><p>完结撒花！</p>
 </li>
 </ul>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>此篇为 git 基础操作，后续会再写一篇 git 高级应用篇，下回见啦。</p>
-<p>参考文章：</p>
-<p><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">git 官方文档</a></p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>此篇介绍了一部分 git 的基础操作命令，但是 git 版本控制的优势远不仅如此，下一篇会罗列一些 git 高级操作的命令，下回见啦。</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">git 官方文档</a></p>
 <p><a href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1" target="_blank" rel="noopener">有用的git命令，动图展示</a></p>
-<h2 id><a href="#" class="headerlink" title></a></h2> 
+<h2 id="-1"><a href="#-1" class="headerlink" title></a></h2> 
       <!-- reward -->
       
     </div>
@@ -406,6 +405,20 @@
   </div>
 
    
+  <nav class="article-nav">
+    
+      <a href="/2020/11/20/MYSQL%E6%80%BB%E4%BD%93%E6%A6%82%E8%A7%88/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            MYSQL总体概览
+          
+        </div>
+      </a>
+    
+    
+  </nav>
+
    
 <!-- valine评论 -->
 <div id="vcomments-box">
