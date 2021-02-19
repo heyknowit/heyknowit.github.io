@@ -1,128 +1,240 @@
 <!DOCTYPE html>
-
-
 <html lang="zh-cn">
-
-
 <head>
-  <meta charset="utf-8" />
-   
-  <meta name="keywords" content="heyknowit,ksying," />
-   
-  <meta name="description" content="heyknowit的博客,技术生活的记录，快乐的源泉。" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <title>
-    Git操作指北基础篇 |  Hey, know it!
-  </title>
-  <meta name="generator" content="hexo-theme-ayer">
-  
-  <link rel="shortcut icon" href="/favicon.ico" />
-  
-  
-<link rel="stylesheet" href="/dist/main.css">
-
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
-
-  
-<link rel="stylesheet" href="/css/custom.css">
-
-  
-  
-<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-
-  
-  
-
-  
-
-<link rel="alternate" href="/atom.xml" title="Hey, know it!" type="application/atom+xml">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="heyknowit,ksying,">
+    <meta name="description" content="heyknowit的博客,技术生活的记录，快乐的源泉。">
+    <meta name="author" content="Ksying">
+    
+    <title>
+        
+            Git操作指北基础篇 |
+        
+        Hey,know it!
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"www.heyknowit.com","root":"/","language":"zh-cn","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":true,"trigger":"auto","unescape":false,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.0"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
+  </script>
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Hey, know it!" type="application/atom+xml">
 </head>
 
-</html>
 
 <body>
-  <div id="app">
+<div class="progress-bar-container">
     
-      
-    <main class="content on">
-      <section class="outer">
-  <article
-  id="post-Git操作指北基础篇"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
+
     
-    <header class="article-header">
-       
-<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Git操作指北基础篇
-</h1>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/" class="article-date">
-  <time datetime="2020-07-13T08:33:57.000Z" itemprop="datePublished">2020-07-13</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/DevOps/">DevOps</a>
-  </div>
-  
-<div class="word_count">
-    <span class="post-time">
-        <span class="post-meta-item-icon">
-            <i class="ri-quill-pen-line"></i>
-            <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">2.9k</span>
-        </span>
-    </span>
-
-    <span class="post-time">
-        &nbsp; | &nbsp;
-        <span class="post-meta-item-icon">
-            <i class="ri-book-open-line"></i>
-            <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">11 min</span>
-        </span>
-    </span>
 </div>
- 
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                Hey,know it!
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
     </div>
-      
-    <div class="tocbot"></div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
 
 
+        </div>
 
+        <div class="page-main-content-middle">
 
-  
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><ul>
-<li><p>git基本操作普及，妈妈再也不用担心我代码出问题了。</p>
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Git操作指北基础篇</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Ksying</span>
+                        
+                            <span class="author-label">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2020-07-13 16:33:57
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/DevOps/">DevOps</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Git/">Git</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>2.9k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>11 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><ul>
+<li><p>  git基本操作普及，妈妈再也不用担心我代码出问题了。</p>
 </li>
 <li><p>什么，你现在还没有 github 账号？ 现在立刻马上整一个。</p>
 <blockquote>
 <ul>
-<li><a href="https://github.com" target="_blank" rel="noopener">Github</a>   国外托管，速度可能有点慢，但这都不是事儿，好用就完事了</li>
-<li><a href="https://gitee.com/" target="_blank" rel="noopener">码云</a>   国内的代码托管平台，速度杠杠的</li>
+<li>  <a class="link" target="_blank" rel="noopener" href="https://github.com/">Github<i class="fas fa-external-link-alt"></i></a>   国外托管，速度可能有点慢，但这都不是事儿，好用就完事了</li>
+<li>  <a class="link" target="_blank" rel="noopener" href="https://gitee.com/">码云<i class="fas fa-external-link-alt"></i></a>   国内的代码托管平台，速度杠杠的</li>
 </ul>
 </blockquote>
 </li>
-<li><p>本入门操作指北的操作环境为 git + idea。（其实只要搞明白了命令行的用法，ui工具都能速通，相信我）</p>
+<li><p>  本入门操作指北的操作环境为 git + idea。（其实只要搞明白了命令行的用法，ui工具都能速通，相信我）</p>
 </li>
 </ul>
 <a id="more"></a>
 
 <h2 id="git-结构"><a href="#git-结构" class="headerlink" title="git 结构"></a>git 结构</h2><ul>
-<li><p>这里得简单的说一下 git的结构了，便于理解后续的操作</p>
+<li><p>  这里得简单的说一下 git的结构了，便于理解后续的操作</p>
 </li>
-<li><p>git 可以分为三个区域 工作区，暂存区 和 版本库(远端)</p>
+<li><p>  git 可以分为三个区域 工作区，暂存区 和 版本库(远端)</p>
 </li>
 <li><p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200716132320340.png" alt="image-20200716132320340"></p>
 <blockquote>
@@ -133,114 +245,94 @@
 </blockquote>
 </li>
 </ul>
-<h2 id="git-命令"><a href="#git-命令" class="headerlink" title="git 命令"></a>git 命令</h2><h3 id="git-init-初始化本地git仓库"><a href="#git-init-初始化本地git仓库" class="headerlink" title="git init  初始化本地git仓库"></a><a name="refrence1" href="#source1">git init</a>  初始化本地git仓库</h3><ul>
-<li><p>一般执行完这个命令，会在本地生成一个 .git 文件夹(隐藏的！)，这样你就可以把它 import 到 git 仓库里面啦。</p>
+<h2 id="git-命令"><a href="#git-命令" class="headerlink" title="git 命令"></a>git 命令</h2><h3 id="git-init-初始化本地git仓库"><a href="#git-init-初始化本地git仓库" class="headerlink" title="git init  初始化本地git仓库"></a><a name="refrence1" href="#source1">git init</a>  初始化本地git仓库</h3><ul>
+<li><p>  一般执行完这个命令，会在本地生成一个 .git 文件夹(隐藏的！)，这样你就可以把它 import 到 git 仓库里面啦。</p>
 </li>
 <li><p>附一段操作实例</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo "# git-operation" &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m "first commit"</span><br><span class="line">git remote add origin https://github.com/heyknowit/git-operation.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200716132159342.png" alt="image-20200716132159342"></p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# git-operation&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin https://github.com/heyknowit/git-operation.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200716132159342.png" alt="image-20200716132159342"></p>
 </li>
 </ul>
 <h3 id="克隆远程git仓库到本地"><a href="#克隆远程git仓库到本地" class="headerlink" title="克隆远程git仓库到本地"></a>克隆远程git仓库到本地</h3><ul>
-<li><p>此方式本地仓库会自动关联到远程仓库，不需要自己关联。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/heyknowit/git-operation.git # clone 后为url，改为自己的即可</span><br></pre></td></tr></table></figure>
-
+<li><p> 此方式本地仓库会自动关联到远程仓库，不需要自己关联。</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/heyknowit/git-operation.git # clone 后为url，改为自己的即可</span><br></pre></td></tr></table></figure>
+<h3 id="分支的查看，创建，切换，删除"><a href="#分支的查看，创建，切换，删除" class="headerlink" title="分支的查看，创建，切换，删除"></a>分支的查看，创建，切换，删除</h3></li>
+<li><p> 查看分支</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch # 查看本地分支</span><br><span class="line">git branch -r # 查看远程分支</span><br><span class="line">git branch -a # 查看本地和远程的所有分支</span><br></pre></td></tr></table></figure>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719161209575.png" alt="image-20200719161209575"></p>
 </li>
-</ul>
-<h3 id="分支的查看，创建，切换，删除"><a href="#分支的查看，创建，切换，删除" class="headerlink" title="分支的查看，创建，切换，删除"></a>分支的查看，创建，切换，删除</h3><ul>
-<li><p>查看分支</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch # 查看本地分支</span><br><span class="line">git branch -r # 查看远程分支</span><br><span class="line">git branch -a # 查看本地和远程的所有分支</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<pre><code>![image-20200719161209575](Git操作指北基础篇/image-20200719161209575.png)</code></pre><ul>
 <li><p>创建&amp;切换分支</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git branch feature/operation2 # 创建 feature/operation2 分支</span><br><span class="line">git checkout feature/operation2 # 切换到 feature/operation2 分支</span><br><span class="line"><span class="meta">#</span><span class="bash"> 以上两个命令可以合并为一个命令，创建并切换到新分支</span></span><br><span class="line">git checkout -b feature/operation2</span><br></pre></td></tr></table></figure>
-</li>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git branch feature/operation2 # 创建 feature/operation2 分支</span><br><span class="line">git checkout feature/operation2 # 切换到 feature/operation2 分支</span><br><span class="line"><span class="meta">#</span><span class="bash"> 以上两个命令可以合并为一个命令，创建并切换到新分支</span></span><br><span class="line">git checkout -b feature/operation2</span><br></pre></td></tr></table></figure></li>
 <li><p>删除分支</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d feature/operation2 # 删除 feature/operation2 分支</span><br></pre></td></tr></table></figure>
-
-
-
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d feature/operation2 # 删除 feature/operation2 分支</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="查看文件状态-是否修改"><a href="#查看文件状态-是否修改" class="headerlink" title="查看文件状态(是否修改)"></a>查看文件状态(是否修改)</h3><ul>
 <li><p>查看上次提交之后是否有修改。</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200716132811183.png" alt="image-20200716132811183"></p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200716132811183.png" alt="image-20200716132811183"></p>
 </li>
 </ul>
 <h3 id="查看修改文件的详细差异"><a href="#查看修改文件的详细差异" class="headerlink" title="查看修改文件的详细差异"></a>查看修改文件的详细差异</h3><ul>
 <li><p>查看执行 git status 的结果的详细信息。执行 git diff 后会展示具体的差异信息</p>
-<p>本步骤基于之前 git init 的操作， 执行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo "# git-operation test" &gt;&gt; README.md</span><br><span class="line">git diff</span><br></pre></td></tr></table></figure>
-
-<p>展示如下：</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200716133010826.png" alt="image-20200716133010826"></p>
+<p>  本步骤基于之前 git init 的操作， 执行</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# git-operation test&quot; &gt;&gt; README.md</span><br><span class="line">git diff</span><br></pre></td></tr></table></figure>
+<p>  展示如下：</p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200716133010826.png" alt="image-20200716133010826"></p>
 <blockquote>
 <p>   git diff 命令显示已写入缓存与已修改但尚未写入缓存的改动的区别。git diff 有两个主要的应用场景。</p>
 <ul>
-<li>尚未缓存的改动：<strong>git diff</strong></li>
-<li>查看已缓存的改动： <strong>git diff –cached</strong></li>
-<li>查看已缓存的与未缓存的所有改动：<strong>git diff HEAD</strong></li>
-<li>显示摘要而非整个 diff：<strong>git diff –stat</strong></li>
+<li>  尚未缓存的改动：<strong>git diff</strong></li>
+<li>  查看已缓存的改动： <strong>git diff –cached</strong></li>
+<li>  查看已缓存的与未缓存的所有改动：<strong>git diff HEAD</strong></li>
+<li>  显示摘要而非整个 diff：<strong>git diff –stat</strong></li>
 </ul>
 </blockquote>
 </li>
 </ul>
 <h3 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h3><ul>
 <li><p>git add就是将<strong>工作区</strong>的修改缓存在<strong>暂存区</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add . # 将当前目录的所有文件都缓存到暂存区</span><br><span class="line">git add file # 将制定文件缓存到暂存区</span><br></pre></td></tr></table></figure>
-
-<p>展示 之行了 git add 命令添加和未添加的文件效果</p>
-<p>相关命令</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 重新生成两个文件，进行对比展示</span></span><br><span class="line">echo "# git-operation test" &gt;&gt; README1.md</span><br><span class="line">echo "# git-operation test" &gt;&gt; README2.md</span><br><span class="line">git add README1.md</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200716133827235.png" alt="image-20200716133827235"></p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add . # 将当前目录的所有文件都缓存到暂存区</span><br><span class="line">git add file # 将制定文件缓存到暂存区</span><br></pre></td></tr></table></figure>
+<p>  展示 之行了 git add 命令添加和未添加的文件效果</p>
+<p>  相关命令</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 重新生成两个文件，进行对比展示</span></span><br><span class="line">echo &quot;# git-operation test&quot; &gt;&gt; README1.md</span><br><span class="line">echo &quot;# git-operation test&quot; &gt;&gt; README2.md</span><br><span class="line">git add README1.md</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200716133827235.png" alt="image-20200716133827235"></p>
 </li>
 </ul>
 <h3 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h3><ul>
 <li><p>git commit就是将<strong>暂存区</strong>的数据快照提交到<strong>本地库</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git add .  # 先将修改的文件添加到暂存区</span><br><span class="line">git commit -m "当前提交的说明信息"  #提交</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 以上两步可以合并为</span></span><br><span class="line">git commit -am "当前提交的说明信息"</span><br></pre></td></tr></table></figure>
-
-<p>附上提交信息规范：</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git add .  # 先将修改的文件添加到暂存区</span><br><span class="line">git commit -m &quot;当前提交的说明信息&quot;  #提交</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 以上两步可以合并为</span></span><br><span class="line">git commit -am &quot;当前提交的说明信息&quot;</span><br></pre></td></tr></table></figure>
+<p>  附上提交信息规范：</p>
 <blockquote>
 <ul>
-<li>feat：新增功能；</li>
-<li>fix：修复bug；</li>
-<li>docs：修改文档；</li>
-<li>refactor：代码重构，未新增任何功能和修复任何bug；</li>
-<li>build：改变构建流程，新增依赖库、工具等（例如webpack修改）；</li>
-<li>style：仅仅修改了空格、缩进等，不改变代码逻辑；</li>
-<li>perf：改善性能和体现的修改；</li>
-<li>chore：非src和test的修改；</li>
-<li>test：测试用例的修改；</li>
-<li>ci：自动化流程配置修改；</li>
-<li>revert：回滚到上一个版本；</li>
+<li>  feat：新增功能；</li>
+<li>  fix：修复bug；</li>
+<li>  docs：修改文档；</li>
+<li>  refactor：代码重构，未新增任何功能和修复任何bug；</li>
+<li>  build：改变构建流程，新增依赖库、工具等（例如webpack修改）；</li>
+<li>  style：仅仅修改了空格、缩进等，不改变代码逻辑；</li>
+<li>  perf：改善性能和体现的修改；</li>
+<li>  chore：非src和test的修改；</li>
+<li>  test：测试用例的修改；</li>
+<li>  ci：自动化流程配置修改；</li>
+<li>  revert：回滚到上一个版本；</li>
 </ul>
 </blockquote>
 </li>
 <li><p>此处推荐 idea 的 Git Commit Template 插件，可以自动生成提交模板，妈妈再也不用担心 git 提交信息规范了！</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200716235016353.png" alt="image-20200716235016353"></p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200716235016353.png" alt="image-20200716235016353"></p>
 </li>
 </ul>
 <h3 id="同步远程仓库"><a href="#同步远程仓库" class="headerlink" title="同步远程仓库"></a>同步远程仓库</h3><p>在同步远程仓库之前，需要确定你本地仓库与远程仓库是否已经关联</p>
 <ul>
 <li><p>本地仓库已经关联到远程仓库</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719153418837.png" alt="image-20200719153418837"></p>
-<p>如上，我的本地仓库已经关联了途中展示的远程仓库，此时我可以使用如下命令进行推送本地仓库的提交到远程仓库</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 各自推送各自分支的提交，互不干扰</span></span><br><span class="line">git push origin master  # 将 master 分支中未推送的提交推送到远程仓库</span><br><span class="line">git push origin feature/operation1  # 将 feature/operation1 分支中未推送的提交推送到远程仓库</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果你已经处于当前要推送的分支上，可以直接推送，不用指定分支</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
-</li>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719153418837.png" alt="image-20200719153418837"></p>
+<p>  如上，我的本地仓库已经关联了途中展示的远程仓库，此时我可以使用如下命令进行推送本地仓库的提交到远程仓库</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 各自推送各自分支的提交，互不干扰</span></span><br><span class="line">git push origin master  # 将 master 分支中未推送的提交推送到远程仓库</span><br><span class="line">git push origin feature/operation1  # 将 feature/operation1 分支中未推送的提交推送到远程仓库</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果你已经处于当前要推送的分支上，可以直接推送，不用指定分支</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure></li>
 <li><p>本地仓库未关联到远程仓库，通常是新建的仓库</p>
-<p>此时就要用到 <a name="source1" href="#refrence1">git init</a> 命令的一系列操作了，可以点击跳转到上方查看，此处不在赘述（前提远程仓库和本地仓库都已创建）。</p>
+<p>  此时就要用到 <a name="source1" href="#refrence1">git init</a> 命令的一系列操作了，可以点击跳转到上方查看，此处不在赘述（前提远程仓库和本地仓库都已创建）。</p>
 </li>
 <li><p>还有一种情况，当新建分支时，需要将本地分支与远程分支进行关联，否则会报错，当然 git 会提示你进行下述命令进行关联操作</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push --set-upstream origin feature/operation1 # 关联当前本地分支到远程分支 feature/operation1</span><br></pre></td></tr></table></figure>
-
-
-
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push --set-upstream origin feature/operation1 # 关联当前本地分支到远程分支 feature/operation1</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="分支合并"><a href="#分支合并" class="headerlink" title="分支合并"></a>分支合并</h3><p>当我们在同步开发不同的功能是，会使用多分支管理来进行不同功能的开发，但是当功能开发完成后，要如何部署到主分支中呢？</p>
@@ -249,42 +341,39 @@
 <blockquote>
 <ul>
 <li><p><strong>Fast-forward (—ff)</strong></p>
-<p>在当前分支相比于我们要合并的分支没有额外的提交（commit）时，可以执行 fast-forward 合并。Git 很懒，首先会尝试执行最简单的选项：fast-forward！这类合并不会创建新的提交，而是会将我们正在合并的分支上的提交直接合并到当前分支。</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/640.gif" alt="img"></p>
+<p>  在当前分支相比于我们要合并的分支没有额外的提交（commit）时，可以执行 fast-forward 合并。Git 很懒，首先会尝试执行最简单的选项：fast-forward！这类合并不会创建新的提交，而是会将我们正在合并的分支上的提交直接合并到当前分支。</p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/640.gif" alt="img"></p>
 </li>
-</ul>
-<ul>
 <li><p><strong>No-fast-foward (—no-ff)</strong></p>
-<p>在当前分支上提交我们想要合并的分支不具备的改变，那么 git 将会执行 no-fast-forward 合并。使用 no-fast-forward 合并时，Git 会在当前活动分支上创建新的 merging commit。这个提交的父提交（parent commit）即指向这个活动分支，也指向我们想要合并的分支！</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/640-20200719181251851.gif" alt="img"></p>
+<p>  在当前分支上提交我们想要合并的分支不具备的改变，那么 git 将会执行 no-fast-forward 合并。使用 no-fast-forward 合并时，Git 会在当前活动分支上创建新的 merging commit。这个提交的父提交（parent commit）即指向这个活动分支，也指向我们想要合并的分支！</p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/640-20200719181251851.gif" alt="img"></p>
 </li>
 </ul>
 </blockquote>
 </li>
 <li><p>分支的合并并不是一帆风顺，有时候你肯定会遇到合并冲突</p>
-<p>feature/operation1 分支 README.md 内容</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719164522982.png" alt="image-20200719164522982"></p>
-<p>master 分支 README.md 内容</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719164804481.png" alt="image-20200719164804481"></p>
-<p>此时合并，肯定就问题了</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">master$</span><span class="bash"> git merge feature/operation1</span></span><br></pre></td></tr></table></figure>
-
+<p>  feature/operation1 分支 README.md 内容</p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719164522982.png" alt="image-20200719164522982"></p>
+<p>  master 分支 README.md 内容</p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719164804481.png" alt="image-20200719164804481"></p>
+<p>  此时合并，肯定就问题了</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">master$</span><span class="bash"> git merge feature/operation1</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>纯 git 命令行操作</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719173254357.png" alt="image-20200719173254357"></p>
-<p>此时根据 git status 得知 README.md 有冲突，查看一下</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719173450059.png" alt="image-20200719173450059"></p>
-<p>发现了文件中的内容变成了上图模样，此时我们只需要将冲突的两个部分合并为你想要的一句话即可，如下</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719173747705.png" alt="image-20200719173747705"></p>
-<p>然后标记已处理并且提交推送，大功告成！</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719173724203.png" alt="image-20200719173724203"></p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719173254357.png" alt="image-20200719173254357"></p>
+<p>  此时根据 git status 得知 README.md 有冲突，查看一下</p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719173450059.png" alt="image-20200719173450059"></p>
+<p>  发现了文件中的内容变成了上图模样，此时我们只需要将冲突的两个部分合并为你想要的一句话即可，如下</p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719173747705.png" alt="image-20200719173747705"></p>
+<p>  然后标记已处理并且提交推送，大功告成！</p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719173724203.png" alt="image-20200719173724203"></p>
 </li>
 <li><p>idea操作</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719164904897.png" alt="image-20200719164904897"></p>
-<p>点击 merge 进行合并吧，此处推一波idea，idea真的好用，哈哈哈</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719165018933.png" alt="image-20200719165018933"></p>
-<p>左侧为 master 分支的内容， 右侧为 feature/operation1 分支的内容，中间为最终合并确定的内容，这个对比合并工具我给满分。</p>
-<p>合并完成直接 apply ，推送到远端，大功告成！</p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719164904897.png" alt="image-20200719164904897"></p>
+<p>  点击 merge 进行合并吧，此处推一波idea，idea真的好用，哈哈哈</p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719165018933.png" alt="image-20200719165018933"></p>
+<p>  左侧为 master 分支的内容， 右侧为 feature/operation1 分支的内容，中间为最终合并确定的内容，这个对比合并工具我给满分。</p>
+<p>  合并完成直接 apply ，推送到远端，大功告成！</p>
 </li>
 </ul>
 </li>
@@ -294,532 +383,262 @@
 <h3 id="拉取"><a href="#拉取" class="headerlink" title="拉取"></a>拉取</h3><p>git pull 命令其实是 git fetch 和 git merge 命令的组合。他会将远端的修改拉取过来并合并到本地分支中</p>
 <p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/640-20200719181350408.gif" alt="img"></p>
 <h3 id="贮藏"><a href="#贮藏" class="headerlink" title="贮藏"></a>贮藏</h3><p>当你在进行着一项任务的开发，突然另一个任务有紧急的事情，需要切换到另一个分支怎么办？难道就这样被你征服，咳咳，就这样提交上去？这怎么可以忍受。没错，此处有个神器，可以帮你解决这个问题，git 的贮藏功能。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">git stash push -m "save message"  # 执行存储时，添加备注，方便查找，只有 git stash 也可以进行贮藏，但查找时很不方便</span><br><span class="line"></span><br><span class="line">git stash list  # 查看stash了哪些存储</span><br><span class="line"></span><br><span class="line">git stash show  # 显示第一个贮藏中哪些文件做了改动(只显示文件名称)</span><br><span class="line">git stash show stash@&#123;1&#125; # 显示第二个贮藏中哪些文件做了改动(只显示文件名称)</span><br><span class="line">git stash show stash@&#123;$num&#125; # 显示第 num + 1 个贮藏中哪些文件做了改动(只显示文件名称)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git stash show -p  # 显示第一个贮藏的具体改动</span><br><span class="line">git stash show stash@&#123;1&#125; -p # 显示第二个贮藏的改动</span><br><span class="line">git stash show stash@&#123;$num&#125; -p # 显示第 num + 1 个贮藏的改动，num 从0开始</span><br><span class="line"></span><br><span class="line">git stash apply  # 应用第一个存储,但不会把贮藏从贮藏列表中删除</span><br><span class="line">git stash apply stash@&#123;1&#125; # 应用第二个贮藏</span><br><span class="line">git stash apply stash@&#123;$num&#125; # 应用第 num + 1 个贮藏，num 从0开始</span><br><span class="line"></span><br><span class="line">git stash pop # 命令恢复之前缓存的工作目录，将缓存堆栈中第一个stash删除，并将对应修改应用到当前的工作目录下</span><br><span class="line">git stash pop stash@&#123;1&#125; # 应用并删除第二个贮藏</span><br><span class="line">git stash pop stash@&#123;$num&#125;  # 应用并删除第 num + 1 个贮藏，num 从0开始</span><br><span class="line"></span><br><span class="line">git stash drop stash@&#123;$num&#125;  # 丢弃stash@&#123;$num&#125;存储，从列表中删除这个存储</span><br><span class="line"></span><br><span class="line">git stash clear  # 删除所有缓存的stash</span><br><span class="line"></span><br><span class="line">git stash branch newbranchname # 非常赞的一个功能。以你指定的分支名(newbranchname)创建一个新分支，检出贮藏工作时所在的提交，重新在那应用工作，然后在应用成功后丢弃贮藏</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">git stash push -m &quot;save message&quot;  # 执行存储时，添加备注，方便查找，只有 git stash 也可以进行贮藏，但查找时很不方便</span><br><span class="line"></span><br><span class="line">git stash list  # 查看stash了哪些存储</span><br><span class="line"></span><br><span class="line">git stash show  # 显示第一个贮藏中哪些文件做了改动(只显示文件名称)</span><br><span class="line">git stash show stash@&#123;1&#125; # 显示第二个贮藏中哪些文件做了改动(只显示文件名称)</span><br><span class="line">git stash show stash@&#123;$num&#125; # 显示第 num + 1 个贮藏中哪些文件做了改动(只显示文件名称)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git stash show -p  # 显示第一个贮藏的具体改动</span><br><span class="line">git stash show stash@&#123;1&#125; -p # 显示第二个贮藏的改动</span><br><span class="line">git stash show stash@&#123;$num&#125; -p # 显示第 num + 1 个贮藏的改动，num 从0开始</span><br><span class="line"></span><br><span class="line">git stash apply  # 应用第一个存储,但不会把贮藏从贮藏列表中删除</span><br><span class="line">git stash apply stash@&#123;1&#125; # 应用第二个贮藏</span><br><span class="line">git stash apply stash@&#123;$num&#125; # 应用第 num + 1 个贮藏，num 从0开始</span><br><span class="line"></span><br><span class="line">git stash pop # 命令恢复之前缓存的工作目录，将缓存堆栈中第一个stash删除，并将对应修改应用到当前的工作目录下</span><br><span class="line">git stash pop stash@&#123;1&#125; # 应用并删除第二个贮藏</span><br><span class="line">git stash pop stash@&#123;$num&#125;  # 应用并删除第 num + 1 个贮藏，num 从0开始</span><br><span class="line"></span><br><span class="line">git stash drop stash@&#123;$num&#125;  # 丢弃stash@&#123;$num&#125;存储，从列表中删除这个存储</span><br><span class="line"></span><br><span class="line">git stash clear  # 删除所有缓存的stash</span><br><span class="line"></span><br><span class="line">git stash branch newbranchname # 非常赞的一个功能。以你指定的分支名(newbranchname)创建一个新分支，检出贮藏工作时所在的提交，重新在那应用工作，然后在应用成功后丢弃贮藏</span><br></pre></td></tr></table></figure>
 <h3 id><a href="#" class="headerlink" title></a></h3><h2 id="Git-一般操作流程"><a href="#Git-一般操作流程" class="headerlink" title="Git 一般操作流程"></a>Git 一般操作流程</h2><ul>
-<li><p>从远端拉取分支/创建分支。</p>
+<li><p>  从远端拉取分支/创建分支。</p>
 </li>
-<li><p>创建新分支，并同步关联到远程分支。</p>
+<li><p>  创建新分支，并同步关联到远程分支。</p>
 </li>
-<li><p>在新分支上进行开发任务。</p>
+<li><p>  在新分支上进行开发任务。</p>
 </li>
-<li><p>每天工作完毕后，提交推送当天的修改到当前分支对应的远程分支</p>
+<li><p>  每天工作完毕后，提交推送当天的修改到当前分支对应的远程分支</p>
 </li>
-<li><p>第二天拉取主分支代码，是否有更新，有更新的话需要合并到自己的分支，保证当前分支的为最新代码</p>
+<li><p>  第二天拉取主分支代码，是否有更新，有更新的话需要合并到自己的分支，保证当前分支的为最新代码</p>
 </li>
-<li><p>拉取合并后进行下一步的开发任务</p>
+<li><p>  拉取合并后进行下一步的开发任务</p>
 </li>
 <li><p>开发完毕</p>
 <ul>
-<li><p>主分支拉取到最新的代码</p>
+<li><p>  主分支拉取到最新的代码</p>
 </li>
-<li><p>进行主分支的合并(如果你每天都拉去合并主分支最新代码的话，此时基本上不会存在太多的冲突)</p>
+<li><p>  进行主分支的合并(如果你每天都拉去合并主分支最新代码的话，此时基本上不会存在太多的冲突)</p>
 </li>
-<li><p>合并完成，删除开发分支。</p>
+<li><p>  合并完成，删除开发分支。</p>
 </li>
 </ul>
 </li>
 <li><p>开发未完毕(合并后还需在当前分支进行开发任务)</p>
 <ul>
-<li>主分支拉取到最新的代码</li>
-<li>进行主分支的合并(如果你每天都拉去合并主分支最新代码的话，此时基本上不会存在太多的冲突)</li>
-<li>合并完成后，将主分支合并到开发分支，保持最新代码进行下一步开发</li>
+<li>  主分支拉取到最新的代码</li>
+<li>  进行主分支的合并(如果你每天都拉去合并主分支最新代码的话，此时基本上不会存在太多的冲突)</li>
+<li>  合并完成后，将主分支合并到开发分支，保持最新代码进行下一步开发</li>
 </ul>
 </li>
-<li><p>完结撒花！</p>
+<li><p>  完结撒花！</p>
 </li>
 </ul>
 <h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>此篇介绍了一部分 git 的基础操作命令，但是 git 版本控制的优势远不仅如此，下一篇会罗列一些 git 高级操作的命令，下回见啦。</p>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">git 官方文档</a></p>
-<p><a href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1" target="_blank" rel="noopener">有用的git命令，动图展示</a></p>
-<h2 id="-1"><a href="#-1" class="headerlink" title></a></h2> 
-      <!-- reward -->
-      
-    </div>
-    
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a class="link" target="_blank" rel="noopener" href="https://git-scm.com/book/zh/v2">git 官方文档<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link" target="_blank" rel="noopener" href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1">有用的git命令，动图展示<i class="fas fa-external-link-alt"></i></a></p>
+<h2 id="-1"><a href="#-1" class="headerlink" title></a></h2>
+        </div>
 
-    <!-- copyright -->
-    
-    <div class="declare">
-      <ul class="post-copyright">
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：Git操作指北基础篇</li>
+        <li>Post author：Ksying</li>
+        <li>Create time：2020-07-13 16:33:57</li>
         <li>
-          <i class="ri-copyright-line"></i>
-          <strong>Copyright： </strong>
-          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+            Post link：https://keep.xpoet.cn/2020/07/13/Git操作指北基础篇/
         </li>
-      </ul>
-    </div>
-    
-    <footer class="article-footer">
-       
-<div class="share-btn">
-      <span class="share-sns share-outer">
-        <i class="ri-share-forward-line"></i>
-        分享
-      </span>
-      <div class="share-wrap">
-        <i class="arrow"></i>
-        <div class="share-icons">
-          
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="ri-weibo-fill"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="ri-wechat-fill"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="ri-qq-fill"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="ri-douban-line"></i>
-          </a>
-          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a> -->
-          
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="ri-facebook-circle-fill"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="ri-twitter-fill"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="ri-google-fill"></i>
-          </a>
-        </div>
-      </div>
-</div>
-
-<div class="wx-share-modal">
-    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://www.heyknowit.com/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li></ul>
-
-    </footer>
-  </div>
-
-   
-  <nav class="article-nav">
-    
-      <a href="/2020/11/20/MYSQL%E6%80%BB%E4%BD%93%E6%A6%82%E8%A7%88/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            MYSQL总体概览
-          
-        </div>
-      </a>
-    
-    
-  </nav>
-
-   
-<!-- valine评论 -->
-<div id="vcomments-box">
-  <div id="vcomments"></div>
-</div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
-<script>
-  new Valine({
-    el: "#vcomments",
-    app_id: "",
-    app_key: "",
-    path: window.location.pathname,
-    avatar: "monsterid",
-    placeholder: "给我的文章加点评论吧~",
-    recordIP: true,
-  });
-  const infoEle = document.querySelector("#vcomments .info");
-  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
-    infoEle.childNodes.forEach(function (item) {
-      item.parentNode.removeChild(item);
-    });
-  }
-</script>
-<style>
-  #vcomments-box {
-    padding: 5px 30px;
-  }
-
-  @media screen and (max-width: 800px) {
-    #vcomments-box {
-      padding: 5px 0px;
-    }
-  }
-
-  #vcomments-box #vcomments {
-    background-color: #fff;
-  }
-
-  .v .vlist .vcard .vh {
-    padding-right: 20px;
-  }
-
-  .v .vlist .vcard {
-    padding-left: 10px;
-  }
-</style>
-
- 
-     
-</article>
-
-</section>
-      <footer class="footer">
-  <div class="outer">
-    <ul>
-      <li>
-        Copyrights &copy;
-        2020
-        <i class="ri-heart-fill heart_icon"></i> heyknowit
-      </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
     </ul>
-    <ul>
-      <li>
-        
-      </li>
-    </ul>
-    <ul>
-      <li>
-        
-        
-        <span>
-  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
-  <span class="division">|</span>
-  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
-</span>
-        
-      </li>
-    </ul>
-    <ul>
-      
-    </ul>
-    <ul>
-      <li>
-        <!-- cnzz统计 -->
-        
-      </li>
-    </ul>
-  </div>
-</footer>
-      <div class="float_btns">
-        <div class="totop" id="totop">
-  <i class="ri-arrow-up-line"></i>
 </div>
 
-<div class="todark" id="todark">
-  <i class="ri-moon-line"></i>
-</div>
+            </div>
+        
 
-      </div>
-    </main>
-    <aside class="sidebar on">
-      <button class="navbar-toggle"></button>
-<nav class="navbar">
-  
-  <div class="logo">
-    <a href="/"><img src="/images/ayer-side.svg" alt="Hey, know it!"></a>
-  </div>
-  
-  <ul class="nav nav-main">
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/">主页</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/archives">归档</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/categories">分类</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/tags">标签</a>
-    </li>
-    
-  </ul>
-</nav>
-<nav class="navbar navbar-bottom">
-  <ul class="nav">
-    <li class="nav-item">
-      
-      <a class="nav-item-link nav-item-search"  title="Search">
-        <i class="ri-search-line"></i>
-      </a>
-      
-      
-      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
-        <i class="ri-rss-line"></i>
-      </a>
-      
-    </li>
-  </ul>
-</nav>
-<div class="search-form-wrap">
-  <div class="local-search local-search-plugin">
-  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
-  <div id="local-search-result" class="local-search-result"></div>
-</div>
-</div>
-    </aside>
-    <script>
-      if (window.matchMedia("(max-width: 768px)").matches) {
-        document.querySelector('.content').classList.remove('on');
-        document.querySelector('.sidebar').classList.remove('on');
-      }
-    </script>
-    <div id="mask"></div>
-
-<!-- #reward -->
-<div id="reward">
-  <span class="close"><i class="ri-close-line"></i></span>
-  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
-  <div class="reward-box">
-    
-    <div class="reward-item">
-      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
-      <span class="reward-type">支付宝</span>
-    </div>
-    
-    
-    <div class="reward-item">
-      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
-      <span class="reward-type">微信</span>
-    </div>
-    
-  </div>
-</div>
-    
-<script src="/js/jquery-2.0.3.min.js"></script>
-
-
-<script src="/js/lazyload.min.js"></script>
-
-<!-- Tocbot -->
-
-
-<script src="/js/tocbot.min.js"></script>
-
-<script>
-  tocbot.init({
-    tocSelector: '.tocbot',
-    contentSelector: '.article-entry',
-    headingSelector: 'h1, h2, h3, h4, h5, h6',
-    hasInnerContainers: true,
-    scrollSmooth: true,
-    scrollContainer: 'main',
-    positionFixedSelector: '.tocbot',
-    positionFixedClass: 'is-position-fixed',
-    fixedSidebarOffset: 'auto'
-  });
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
-<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
-
-<script src="/dist/main.js"></script>
-
-<!-- ImageViewer -->
-
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-
-            <div class="pswp__top-bar">
-
-                <!--  Controls are self-explanatory. Order can be changed. -->
-
-                <div class="pswp__counter"></div>
-
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
-
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                        </div>
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2020/11/20/MYSQL%E6%80%BB%E4%BD%93%E6%A6%82%E8%A7%88/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">MYSQL总体概览</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
                     </div>
-                </div>
+                
+                
             </div>
+        
 
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
+        
+    </div>
+</div>
 
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
 
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
+                
             </div>
 
         </div>
 
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Ksying</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.0</a>
+        </div>
+    </div>
+</footer>
+
+        </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
 </div>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
-<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+        </div>
+    
 
-<script>
-    function viewer_init() {
-        let pswpElement = document.querySelectorAll('.pswp')[0];
-        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
 
-        $imgArr.forEach(($em, i) => {
-            $em.onclick = () => {
-                // slider展开状态
-                // todo: 这样不好，后面改成状态
-                if (document.querySelector('.left-col.show')) return
-                let items = []
-                $imgArr.forEach(($em2, i2) => {
-                    let img = $em2.getAttribute('data-idx', i2)
-                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
-                    let title = $em2.getAttribute('alt')
-                    // 获得原图尺寸
-                    const image = new Image()
-                    image.src = src
-                    items.push({
-                        src: src,
-                        w: image.width || $em2.width,
-                        h: image.height || $em2.height,
-                        title: title
-                    })
-                })
-                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
-                    index: parseInt(i)
-                });
-                gallery.init()
-            }
-        })
-    }
-    viewer_init()
-</script>
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
 
-<!-- MathJax -->
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
 
-<!-- Katex -->
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
 
-<!-- busuanzi  -->
-
-
-<script src="/js/busuanzi-2.3.pure.min.js"></script>
-
-
-<!-- ClickLove -->
-
-<!-- ClickBoom1 -->
-
-<!-- ClickBoom2 -->
-
-<!-- CodeCopy -->
-
-
-<link rel="stylesheet" href="/css/clipboard.css">
-
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-<script>
-  function wait(callback, seconds) {
-    var timelag = null;
-    timelag = window.setTimeout(callback, seconds);
-  }
-  !function (e, t, a) {
-    var initCopyCode = function(){
-      var copyHtml = '';
-      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
-      copyHtml += '</button>';
-      $(".highlight .code pre").before(copyHtml);
-      $(".article pre code").before(copyHtml);
-      var clipboard = new ClipboardJS('.btn-copy', {
-        target: function(trigger) {
-          return trigger.nextElementSibling;
-        }
-      });
-      clipboard.on('success', function(e) {
-        let $btn = $(e.trigger);
-        $btn.addClass('copied');
-        let $icon = $($btn.find('i'));
-        $icon.removeClass('ri-file-copy-2-line');
-        $icon.addClass('ri-checkbox-circle-line');
-        let $span = $($btn.find('span'));
-        $span[0].innerText = 'COPIED';
+        <!-- rss -->
         
-        wait(function () { // 等待两秒钟后恢复
-          $icon.removeClass('ri-checkbox-circle-line');
-          $icon.addClass('ri-file-copy-2-line');
-          $span[0].innerText = 'COPY';
-        }, 2000);
-      });
-      clipboard.on('error', function(e) {
-        e.clearSelection();
-        let $btn = $(e.trigger);
-        $btn.addClass('copy-failed');
-        let $icon = $($btn.find('i'));
-        $icon.removeClass('ri-file-copy-2-line');
-        $icon.addClass('ri-time-line');
-        let $span = $($btn.find('span'));
-        $span[0].innerText = 'COPY FAILED';
+
         
-        wait(function () { // 等待两秒钟后恢复
-          $icon.removeClass('ri-time-line');
-          $icon.addClass('ri-file-copy-2-line');
-          $span[0].innerText = 'COPY';
-        }, 2000);
-      });
-    }
-    initCopyCode();
-  }(window, document);
-</script>
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
 
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
 
-<!-- CanvasBackground -->
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">git 结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-%E5%91%BD%E4%BB%A4"><span class="nav-number">3.</span> <span class="nav-text">git 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git-init-%E5%88%9D%E5%A7%8B%E5%8C%96%E6%9C%AC%E5%9C%B0git%E4%BB%93%E5%BA%93"><span class="nav-number">3.1.</span> <span class="nav-text">git init  初始化本地git仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%8B%E9%9A%86%E8%BF%9C%E7%A8%8Bgit%E4%BB%93%E5%BA%93%E5%88%B0%E6%9C%AC%E5%9C%B0"><span class="nav-number">3.2.</span> <span class="nav-text">克隆远程git仓库到本地</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E7%9A%84%E6%9F%A5%E7%9C%8B%EF%BC%8C%E5%88%9B%E5%BB%BA%EF%BC%8C%E5%88%87%E6%8D%A2%EF%BC%8C%E5%88%A0%E9%99%A4"><span class="nav-number">3.3.</span> <span class="nav-text">分支的查看，创建，切换，删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E7%8A%B6%E6%80%81-%E6%98%AF%E5%90%A6%E4%BF%AE%E6%94%B9"><span class="nav-number">3.4.</span> <span class="nav-text">查看文件状态(是否修改)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%A6%E7%BB%86%E5%B7%AE%E5%BC%82"><span class="nav-number">3.5.</span> <span class="nav-text">查看修改文件的详细差异</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-add"><span class="nav-number">3.6.</span> <span class="nav-text">git add</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-commit"><span class="nav-number">3.7.</span> <span class="nav-text">git commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="nav-number">3.8.</span> <span class="nav-text">同步远程仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E5%90%88%E5%B9%B6"><span class="nav-number">3.9.</span> <span class="nav-text">分支合并</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%96%E5%9B%9E"><span class="nav-number">3.10.</span> <span class="nav-text">取回</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%89%E5%8F%96"><span class="nav-number">3.11.</span> <span class="nav-text">拉取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%AE%E8%97%8F"><span class="nav-number">3.12.</span> <span class="nav-text">贮藏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.13.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-%E4%B8%80%E8%88%AC%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text">Git 一般操作流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%90%8E"><span class="nav-number">5.</span> <span class="nav-text">最后</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">6.</span> <span class="nav-text">参考文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-1"><span class="nav-number">7.</span> <span class="nav-text"></span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
 
 
     
-  </div>
-</body>
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
 
+    
+
+</main>
+
+
+
+<script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/header-shrink.js"></script><script src="/js/back2top.js"></script><script src="/js/dark-light-toggle.js"></script>
+
+
+    <script src="/js/local-search.js"></script>
+
+
+
+    <script src="/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="/js/left-side-toggle.js"></script><script src="/js/libs/anime.min.js"></script><script src="/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
 </html>

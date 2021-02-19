@@ -4,25 +4,25 @@
     <title>Git操作指北基础篇</title>
     <url>/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/</url>
     <content><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><ul>
-<li><p>git基本操作普及，妈妈再也不用担心我代码出问题了。</p>
+<li><p>  git基本操作普及，妈妈再也不用担心我代码出问题了。</p>
 </li>
 <li><p>什么，你现在还没有 github 账号？ 现在立刻马上整一个。</p>
 <blockquote>
 <ul>
-<li><a href="https://github.com" target="_blank" rel="noopener">Github</a>   国外托管，速度可能有点慢，但这都不是事儿，好用就完事了</li>
-<li><a href="https://gitee.com/" target="_blank" rel="noopener">码云</a>   国内的代码托管平台，速度杠杠的</li>
+<li>  <a class="link" href="https://github.com/">Github<i class="fas fa-external-link-alt"></i></a>   国外托管，速度可能有点慢，但这都不是事儿，好用就完事了</li>
+<li>  <a class="link" href="https://gitee.com/">码云<i class="fas fa-external-link-alt"></i></a>   国内的代码托管平台，速度杠杠的</li>
 </ul>
 </blockquote>
 </li>
-<li><p>本入门操作指北的操作环境为 git + idea。（其实只要搞明白了命令行的用法，ui工具都能速通，相信我）</p>
+<li><p>  本入门操作指北的操作环境为 git + idea。（其实只要搞明白了命令行的用法，ui工具都能速通，相信我）</p>
 </li>
 </ul>
 <a id="more"></a>
 
 <h2 id="git-结构"><a href="#git-结构" class="headerlink" title="git 结构"></a>git 结构</h2><ul>
-<li><p>这里得简单的说一下 git的结构了，便于理解后续的操作</p>
+<li><p>  这里得简单的说一下 git的结构了，便于理解后续的操作</p>
 </li>
-<li><p>git 可以分为三个区域 工作区，暂存区 和 版本库(远端)</p>
+<li><p>  git 可以分为三个区域 工作区，暂存区 和 版本库(远端)</p>
 </li>
 <li><p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200716132320340.png" alt="image-20200716132320340"></p>
 <blockquote>
@@ -33,114 +33,94 @@
 </blockquote>
 </li>
 </ul>
-<h2 id="git-命令"><a href="#git-命令" class="headerlink" title="git 命令"></a>git 命令</h2><h3 id="git-init-初始化本地git仓库"><a href="#git-init-初始化本地git仓库" class="headerlink" title="git init  初始化本地git仓库"></a><a name="refrence1" href="#source1">git init</a>  初始化本地git仓库</h3><ul>
-<li><p>一般执行完这个命令，会在本地生成一个 .git 文件夹(隐藏的！)，这样你就可以把它 import 到 git 仓库里面啦。</p>
+<h2 id="git-命令"><a href="#git-命令" class="headerlink" title="git 命令"></a>git 命令</h2><h3 id="git-init-初始化本地git仓库"><a href="#git-init-初始化本地git仓库" class="headerlink" title="git init  初始化本地git仓库"></a><a name="refrence1" href="#source1">git init</a>  初始化本地git仓库</h3><ul>
+<li><p>  一般执行完这个命令，会在本地生成一个 .git 文件夹(隐藏的！)，这样你就可以把它 import 到 git 仓库里面啦。</p>
 </li>
 <li><p>附一段操作实例</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo "# git-operation" &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m "first commit"</span><br><span class="line">git remote add origin https://github.com/heyknowit/git-operation.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200716132159342.png" alt="image-20200716132159342"></p>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo &quot;# git-operation&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin https://github.com/heyknowit/git-operation.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200716132159342.png" alt="image-20200716132159342"></p>
 </li>
 </ul>
 <h3 id="克隆远程git仓库到本地"><a href="#克隆远程git仓库到本地" class="headerlink" title="克隆远程git仓库到本地"></a>克隆远程git仓库到本地</h3><ul>
-<li><p>此方式本地仓库会自动关联到远程仓库，不需要自己关联。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/heyknowit/git-operation.git # clone 后为url，改为自己的即可</span><br></pre></td></tr></table></figure>
-
+<li><p> 此方式本地仓库会自动关联到远程仓库，不需要自己关联。</p>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/heyknowit/git-operation.git # clone 后为url，改为自己的即可</span><br></pre></td></tr></table></figure>
+<h3 id="分支的查看，创建，切换，删除"><a href="#分支的查看，创建，切换，删除" class="headerlink" title="分支的查看，创建，切换，删除"></a>分支的查看，创建，切换，删除</h3></li>
+<li><p> 查看分支</p>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch # 查看本地分支</span><br><span class="line">git branch -r # 查看远程分支</span><br><span class="line">git branch -a # 查看本地和远程的所有分支</span><br></pre></td></tr></table></figure>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719161209575.png" alt="image-20200719161209575"></p>
 </li>
-</ul>
-<h3 id="分支的查看，创建，切换，删除"><a href="#分支的查看，创建，切换，删除" class="headerlink" title="分支的查看，创建，切换，删除"></a>分支的查看，创建，切换，删除</h3><ul>
-<li><p>查看分支</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch # 查看本地分支</span><br><span class="line">git branch -r # 查看远程分支</span><br><span class="line">git branch -a # 查看本地和远程的所有分支</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<pre><code>![image-20200719161209575](Git操作指北基础篇/image-20200719161209575.png)</code></pre><ul>
 <li><p>创建&amp;切换分支</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch feature/operation2 # 创建 feature/operation2 分支</span><br><span class="line">git checkout feature/operation2 # 切换到 feature/operation2 分支</span><br><span class="line"><span class="meta">#</span><span class="bash"> 以上两个命令可以合并为一个命令，创建并切换到新分支</span></span><br><span class="line">git checkout -b feature/operation2</span><br></pre></td></tr></table></figure>
-</li>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch feature/operation2 # 创建 feature/operation2 分支</span><br><span class="line">git checkout feature/operation2 # 切换到 feature/operation2 分支</span><br><span class="line"><span class="meta">#</span><span class="bash"> 以上两个命令可以合并为一个命令，创建并切换到新分支</span></span><br><span class="line">git checkout -b feature/operation2</span><br></pre></td></tr></table></figure></li>
 <li><p>删除分支</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch -d feature/operation2 # 删除 feature/operation2 分支</span><br></pre></td></tr></table></figure>
-
-
-
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch -d feature/operation2 # 删除 feature/operation2 分支</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="查看文件状态-是否修改"><a href="#查看文件状态-是否修改" class="headerlink" title="查看文件状态(是否修改)"></a>查看文件状态(是否修改)</h3><ul>
 <li><p>查看上次提交之后是否有修改。</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200716132811183.png" alt="image-20200716132811183"></p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200716132811183.png" alt="image-20200716132811183"></p>
 </li>
 </ul>
 <h3 id="查看修改文件的详细差异"><a href="#查看修改文件的详细差异" class="headerlink" title="查看修改文件的详细差异"></a>查看修改文件的详细差异</h3><ul>
 <li><p>查看执行 git status 的结果的详细信息。执行 git diff 后会展示具体的差异信息</p>
-<p>本步骤基于之前 git init 的操作， 执行</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo "# git-operation test" &gt;&gt; README.md</span><br><span class="line">git diff</span><br></pre></td></tr></table></figure>
-
-<p>展示如下：</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200716133010826.png" alt="image-20200716133010826"></p>
+<p>  本步骤基于之前 git init 的操作， 执行</p>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo &quot;# git-operation test&quot; &gt;&gt; README.md</span><br><span class="line">git diff</span><br></pre></td></tr></table></figure>
+<p>  展示如下：</p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200716133010826.png" alt="image-20200716133010826"></p>
 <blockquote>
 <p>   git diff 命令显示已写入缓存与已修改但尚未写入缓存的改动的区别。git diff 有两个主要的应用场景。</p>
 <ul>
-<li>尚未缓存的改动：<strong>git diff</strong></li>
-<li>查看已缓存的改动： <strong>git diff –cached</strong></li>
-<li>查看已缓存的与未缓存的所有改动：<strong>git diff HEAD</strong></li>
-<li>显示摘要而非整个 diff：<strong>git diff –stat</strong></li>
+<li>  尚未缓存的改动：<strong>git diff</strong></li>
+<li>  查看已缓存的改动： <strong>git diff –cached</strong></li>
+<li>  查看已缓存的与未缓存的所有改动：<strong>git diff HEAD</strong></li>
+<li>  显示摘要而非整个 diff：<strong>git diff –stat</strong></li>
 </ul>
 </blockquote>
 </li>
 </ul>
 <h3 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h3><ul>
 <li><p>git add就是将<strong>工作区</strong>的修改缓存在<strong>暂存区</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add . # 将当前目录的所有文件都缓存到暂存区</span><br><span class="line">git add file # 将制定文件缓存到暂存区</span><br></pre></td></tr></table></figure>
-
-<p>展示 之行了 git add 命令添加和未添加的文件效果</p>
-<p>相关命令</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 重新生成两个文件，进行对比展示</span></span><br><span class="line">echo "# git-operation test" &gt;&gt; README1.md</span><br><span class="line">echo "# git-operation test" &gt;&gt; README2.md</span><br><span class="line">git add README1.md</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200716133827235.png" alt="image-20200716133827235"></p>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add . # 将当前目录的所有文件都缓存到暂存区</span><br><span class="line">git add file # 将制定文件缓存到暂存区</span><br></pre></td></tr></table></figure>
+<p>  展示 之行了 git add 命令添加和未添加的文件效果</p>
+<p>  相关命令</p>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 重新生成两个文件，进行对比展示</span></span><br><span class="line">echo &quot;# git-operation test&quot; &gt;&gt; README1.md</span><br><span class="line">echo &quot;# git-operation test&quot; &gt;&gt; README2.md</span><br><span class="line">git add README1.md</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200716133827235.png" alt="image-20200716133827235"></p>
 </li>
 </ul>
 <h3 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h3><ul>
 <li><p>git commit就是将<strong>暂存区</strong>的数据快照提交到<strong>本地库</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add .  # 先将修改的文件添加到暂存区</span><br><span class="line">git commit -m "当前提交的说明信息"  #提交</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 以上两步可以合并为</span></span><br><span class="line">git commit -am "当前提交的说明信息"</span><br></pre></td></tr></table></figure>
-
-<p>附上提交信息规范：</p>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add .  # 先将修改的文件添加到暂存区</span><br><span class="line">git commit -m &quot;当前提交的说明信息&quot;  #提交</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 以上两步可以合并为</span></span><br><span class="line">git commit -am &quot;当前提交的说明信息&quot;</span><br></pre></td></tr></table></figure>
+<p>  附上提交信息规范：</p>
 <blockquote>
 <ul>
-<li>feat：新增功能；</li>
-<li>fix：修复bug；</li>
-<li>docs：修改文档；</li>
-<li>refactor：代码重构，未新增任何功能和修复任何bug；</li>
-<li>build：改变构建流程，新增依赖库、工具等（例如webpack修改）；</li>
-<li>style：仅仅修改了空格、缩进等，不改变代码逻辑；</li>
-<li>perf：改善性能和体现的修改；</li>
-<li>chore：非src和test的修改；</li>
-<li>test：测试用例的修改；</li>
-<li>ci：自动化流程配置修改；</li>
-<li>revert：回滚到上一个版本；</li>
+<li>  feat：新增功能；</li>
+<li>  fix：修复bug；</li>
+<li>  docs：修改文档；</li>
+<li>  refactor：代码重构，未新增任何功能和修复任何bug；</li>
+<li>  build：改变构建流程，新增依赖库、工具等（例如webpack修改）；</li>
+<li>  style：仅仅修改了空格、缩进等，不改变代码逻辑；</li>
+<li>  perf：改善性能和体现的修改；</li>
+<li>  chore：非src和test的修改；</li>
+<li>  test：测试用例的修改；</li>
+<li>  ci：自动化流程配置修改；</li>
+<li>  revert：回滚到上一个版本；</li>
 </ul>
 </blockquote>
 </li>
 <li><p>此处推荐 idea 的 Git Commit Template 插件，可以自动生成提交模板，妈妈再也不用担心 git 提交信息规范了！</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200716235016353.png" alt="image-20200716235016353"></p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200716235016353.png" alt="image-20200716235016353"></p>
 </li>
 </ul>
 <h3 id="同步远程仓库"><a href="#同步远程仓库" class="headerlink" title="同步远程仓库"></a>同步远程仓库</h3><p>在同步远程仓库之前，需要确定你本地仓库与远程仓库是否已经关联</p>
 <ul>
 <li><p>本地仓库已经关联到远程仓库</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719153418837.png" alt="image-20200719153418837"></p>
-<p>如上，我的本地仓库已经关联了途中展示的远程仓库，此时我可以使用如下命令进行推送本地仓库的提交到远程仓库</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 各自推送各自分支的提交，互不干扰</span></span><br><span class="line">git push origin master  # 将 master 分支中未推送的提交推送到远程仓库</span><br><span class="line">git push origin feature/operation1  # 将 feature/operation1 分支中未推送的提交推送到远程仓库</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果你已经处于当前要推送的分支上，可以直接推送，不用指定分支</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
-</li>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719153418837.png" alt="image-20200719153418837"></p>
+<p>  如上，我的本地仓库已经关联了途中展示的远程仓库，此时我可以使用如下命令进行推送本地仓库的提交到远程仓库</p>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 各自推送各自分支的提交，互不干扰</span></span><br><span class="line">git push origin master  # 将 master 分支中未推送的提交推送到远程仓库</span><br><span class="line">git push origin feature/operation1  # 将 feature/operation1 分支中未推送的提交推送到远程仓库</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果你已经处于当前要推送的分支上，可以直接推送，不用指定分支</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure></li>
 <li><p>本地仓库未关联到远程仓库，通常是新建的仓库</p>
-<p>此时就要用到 <a name="source1" href="#refrence1">git init</a> 命令的一系列操作了，可以点击跳转到上方查看，此处不在赘述（前提远程仓库和本地仓库都已创建）。</p>
+<p>  此时就要用到 <a name="source1" href="#refrence1">git init</a> 命令的一系列操作了，可以点击跳转到上方查看，此处不在赘述（前提远程仓库和本地仓库都已创建）。</p>
 </li>
 <li><p>还有一种情况，当新建分支时，需要将本地分支与远程分支进行关联，否则会报错，当然 git 会提示你进行下述命令进行关联操作</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git push --set-upstream origin feature/operation1 # 关联当前本地分支到远程分支 feature/operation1</span><br></pre></td></tr></table></figure>
-
-
-
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git push --set-upstream origin feature/operation1 # 关联当前本地分支到远程分支 feature/operation1</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="分支合并"><a href="#分支合并" class="headerlink" title="分支合并"></a>分支合并</h3><p>当我们在同步开发不同的功能是，会使用多分支管理来进行不同功能的开发，但是当功能开发完成后，要如何部署到主分支中呢？</p>
@@ -149,42 +129,39 @@
 <blockquote>
 <ul>
 <li><p><strong>Fast-forward (—ff)</strong></p>
-<p>在当前分支相比于我们要合并的分支没有额外的提交（commit）时，可以执行 fast-forward 合并。Git 很懒，首先会尝试执行最简单的选项：fast-forward！这类合并不会创建新的提交，而是会将我们正在合并的分支上的提交直接合并到当前分支。</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/640.gif" alt="img"></p>
+<p>  在当前分支相比于我们要合并的分支没有额外的提交（commit）时，可以执行 fast-forward 合并。Git 很懒，首先会尝试执行最简单的选项：fast-forward！这类合并不会创建新的提交，而是会将我们正在合并的分支上的提交直接合并到当前分支。</p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/640.gif" alt="img"></p>
 </li>
-</ul>
-<ul>
 <li><p><strong>No-fast-foward (—no-ff)</strong></p>
-<p>在当前分支上提交我们想要合并的分支不具备的改变，那么 git 将会执行 no-fast-forward 合并。使用 no-fast-forward 合并时，Git 会在当前活动分支上创建新的 merging commit。这个提交的父提交（parent commit）即指向这个活动分支，也指向我们想要合并的分支！</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/640-20200719181251851.gif" alt="img"></p>
+<p>  在当前分支上提交我们想要合并的分支不具备的改变，那么 git 将会执行 no-fast-forward 合并。使用 no-fast-forward 合并时，Git 会在当前活动分支上创建新的 merging commit。这个提交的父提交（parent commit）即指向这个活动分支，也指向我们想要合并的分支！</p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/640-20200719181251851.gif" alt="img"></p>
 </li>
 </ul>
 </blockquote>
 </li>
 <li><p>分支的合并并不是一帆风顺，有时候你肯定会遇到合并冲突</p>
-<p>feature/operation1 分支 README.md 内容</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719164522982.png" alt="image-20200719164522982"></p>
-<p>master 分支 README.md 内容</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719164804481.png" alt="image-20200719164804481"></p>
-<p>此时合并，肯定就问题了</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">master$</span><span class="bash"> git merge feature/operation1</span></span><br></pre></td></tr></table></figure>
-
+<p>  feature/operation1 分支 README.md 内容</p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719164522982.png" alt="image-20200719164522982"></p>
+<p>  master 分支 README.md 内容</p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719164804481.png" alt="image-20200719164804481"></p>
+<p>  此时合并，肯定就问题了</p>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">master$</span><span class="bash"> git merge feature/operation1</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>纯 git 命令行操作</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719173254357.png" alt="image-20200719173254357"></p>
-<p>此时根据 git status 得知 README.md 有冲突，查看一下</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719173450059.png" alt="image-20200719173450059"></p>
-<p>发现了文件中的内容变成了上图模样，此时我们只需要将冲突的两个部分合并为你想要的一句话即可，如下</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719173747705.png" alt="image-20200719173747705"></p>
-<p>然后标记已处理并且提交推送，大功告成！</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719173724203.png" alt="image-20200719173724203"></p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719173254357.png" alt="image-20200719173254357"></p>
+<p>  此时根据 git status 得知 README.md 有冲突，查看一下</p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719173450059.png" alt="image-20200719173450059"></p>
+<p>  发现了文件中的内容变成了上图模样，此时我们只需要将冲突的两个部分合并为你想要的一句话即可，如下</p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719173747705.png" alt="image-20200719173747705"></p>
+<p>  然后标记已处理并且提交推送，大功告成！</p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719173724203.png" alt="image-20200719173724203"></p>
 </li>
 <li><p>idea操作</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719164904897.png" alt="image-20200719164904897"></p>
-<p>点击 merge 进行合并吧，此处推一波idea，idea真的好用，哈哈哈</p>
-<p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719165018933.png" alt="image-20200719165018933"></p>
-<p>左侧为 master 分支的内容， 右侧为 feature/operation1 分支的内容，中间为最终合并确定的内容，这个对比合并工具我给满分。</p>
-<p>合并完成直接 apply ，推送到远端，大功告成！</p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719164904897.png" alt="image-20200719164904897"></p>
+<p>  点击 merge 进行合并吧，此处推一波idea，idea真的好用，哈哈哈</p>
+<p>  <img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/image-20200719165018933.png" alt="image-20200719165018933"></p>
+<p>  左侧为 master 分支的内容， 右侧为 feature/operation1 分支的内容，中间为最终合并确定的内容，这个对比合并工具我给满分。</p>
+<p>  合并完成直接 apply ，推送到远端，大功告成！</p>
 </li>
 </ul>
 </li>
@@ -194,44 +171,43 @@
 <h3 id="拉取"><a href="#拉取" class="headerlink" title="拉取"></a>拉取</h3><p>git pull 命令其实是 git fetch 和 git merge 命令的组合。他会将远端的修改拉取过来并合并到本地分支中</p>
 <p><img src="/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/640-20200719181350408.gif" alt="img"></p>
 <h3 id="贮藏"><a href="#贮藏" class="headerlink" title="贮藏"></a>贮藏</h3><p>当你在进行着一项任务的开发，突然另一个任务有紧急的事情，需要切换到另一个分支怎么办？难道就这样被你征服，咳咳，就这样提交上去？这怎么可以忍受。没错，此处有个神器，可以帮你解决这个问题，git 的贮藏功能。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git stash push -m "save message"  # 执行存储时，添加备注，方便查找，只有 git stash 也可以进行贮藏，但查找时很不方便</span><br><span class="line"></span><br><span class="line">git stash list  # 查看stash了哪些存储</span><br><span class="line"></span><br><span class="line">git stash show  # 显示第一个贮藏中哪些文件做了改动(只显示文件名称)</span><br><span class="line">git stash show stash@&#123;1&#125; # 显示第二个贮藏中哪些文件做了改动(只显示文件名称)</span><br><span class="line">git stash show stash@&#123;$num&#125; # 显示第 num + 1 个贮藏中哪些文件做了改动(只显示文件名称)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git stash show -p  # 显示第一个贮藏的具体改动</span><br><span class="line">git stash show stash@&#123;1&#125; -p # 显示第二个贮藏的改动</span><br><span class="line">git stash show stash@&#123;$num&#125; -p # 显示第 num + 1 个贮藏的改动，num 从0开始</span><br><span class="line"></span><br><span class="line">git stash apply  # 应用第一个存储,但不会把贮藏从贮藏列表中删除</span><br><span class="line">git stash apply stash@&#123;1&#125; # 应用第二个贮藏</span><br><span class="line">git stash apply stash@&#123;$num&#125; # 应用第 num + 1 个贮藏，num 从0开始</span><br><span class="line"></span><br><span class="line">git stash pop # 命令恢复之前缓存的工作目录，将缓存堆栈中第一个stash删除，并将对应修改应用到当前的工作目录下</span><br><span class="line">git stash pop stash@&#123;1&#125; # 应用并删除第二个贮藏</span><br><span class="line">git stash pop stash@&#123;$num&#125;  # 应用并删除第 num + 1 个贮藏，num 从0开始</span><br><span class="line"></span><br><span class="line">git stash drop stash@&#123;$num&#125;  # 丢弃stash@&#123;$num&#125;存储，从列表中删除这个存储</span><br><span class="line"></span><br><span class="line">git stash clear  # 删除所有缓存的stash</span><br><span class="line"></span><br><span class="line">git stash branch newbranchname # 非常赞的一个功能。以你指定的分支名(newbranchname)创建一个新分支，检出贮藏工作时所在的提交，重新在那应用工作，然后在应用成功后丢弃贮藏</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git stash push -m &quot;save message&quot;  # 执行存储时，添加备注，方便查找，只有 git stash 也可以进行贮藏，但查找时很不方便</span><br><span class="line"></span><br><span class="line">git stash list  # 查看stash了哪些存储</span><br><span class="line"></span><br><span class="line">git stash show  # 显示第一个贮藏中哪些文件做了改动(只显示文件名称)</span><br><span class="line">git stash show stash@&#123;1&#125; # 显示第二个贮藏中哪些文件做了改动(只显示文件名称)</span><br><span class="line">git stash show stash@&#123;$num&#125; # 显示第 num + 1 个贮藏中哪些文件做了改动(只显示文件名称)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git stash show -p  # 显示第一个贮藏的具体改动</span><br><span class="line">git stash show stash@&#123;1&#125; -p # 显示第二个贮藏的改动</span><br><span class="line">git stash show stash@&#123;$num&#125; -p # 显示第 num + 1 个贮藏的改动，num 从0开始</span><br><span class="line"></span><br><span class="line">git stash apply  # 应用第一个存储,但不会把贮藏从贮藏列表中删除</span><br><span class="line">git stash apply stash@&#123;1&#125; # 应用第二个贮藏</span><br><span class="line">git stash apply stash@&#123;$num&#125; # 应用第 num + 1 个贮藏，num 从0开始</span><br><span class="line"></span><br><span class="line">git stash pop # 命令恢复之前缓存的工作目录，将缓存堆栈中第一个stash删除，并将对应修改应用到当前的工作目录下</span><br><span class="line">git stash pop stash@&#123;1&#125; # 应用并删除第二个贮藏</span><br><span class="line">git stash pop stash@&#123;$num&#125;  # 应用并删除第 num + 1 个贮藏，num 从0开始</span><br><span class="line"></span><br><span class="line">git stash drop stash@&#123;$num&#125;  # 丢弃stash@&#123;$num&#125;存储，从列表中删除这个存储</span><br><span class="line"></span><br><span class="line">git stash clear  # 删除所有缓存的stash</span><br><span class="line"></span><br><span class="line">git stash branch newbranchname # 非常赞的一个功能。以你指定的分支名(newbranchname)创建一个新分支，检出贮藏工作时所在的提交，重新在那应用工作，然后在应用成功后丢弃贮藏</span><br></pre></td></tr></table></figure>
 <h3 id><a href="#" class="headerlink" title></a></h3><h2 id="Git-一般操作流程"><a href="#Git-一般操作流程" class="headerlink" title="Git 一般操作流程"></a>Git 一般操作流程</h2><ul>
-<li><p>从远端拉取分支/创建分支。</p>
+<li><p>  从远端拉取分支/创建分支。</p>
 </li>
-<li><p>创建新分支，并同步关联到远程分支。</p>
+<li><p>  创建新分支，并同步关联到远程分支。</p>
 </li>
-<li><p>在新分支上进行开发任务。</p>
+<li><p>  在新分支上进行开发任务。</p>
 </li>
-<li><p>每天工作完毕后，提交推送当天的修改到当前分支对应的远程分支</p>
+<li><p>  每天工作完毕后，提交推送当天的修改到当前分支对应的远程分支</p>
 </li>
-<li><p>第二天拉取主分支代码，是否有更新，有更新的话需要合并到自己的分支，保证当前分支的为最新代码</p>
+<li><p>  第二天拉取主分支代码，是否有更新，有更新的话需要合并到自己的分支，保证当前分支的为最新代码</p>
 </li>
-<li><p>拉取合并后进行下一步的开发任务</p>
+<li><p>  拉取合并后进行下一步的开发任务</p>
 </li>
 <li><p>开发完毕</p>
 <ul>
-<li><p>主分支拉取到最新的代码</p>
+<li><p>  主分支拉取到最新的代码</p>
 </li>
-<li><p>进行主分支的合并(如果你每天都拉去合并主分支最新代码的话，此时基本上不会存在太多的冲突)</p>
+<li><p>  进行主分支的合并(如果你每天都拉去合并主分支最新代码的话，此时基本上不会存在太多的冲突)</p>
 </li>
-<li><p>合并完成，删除开发分支。</p>
+<li><p>  合并完成，删除开发分支。</p>
 </li>
 </ul>
 </li>
 <li><p>开发未完毕(合并后还需在当前分支进行开发任务)</p>
 <ul>
-<li>主分支拉取到最新的代码</li>
-<li>进行主分支的合并(如果你每天都拉去合并主分支最新代码的话，此时基本上不会存在太多的冲突)</li>
-<li>合并完成后，将主分支合并到开发分支，保持最新代码进行下一步开发</li>
+<li>  主分支拉取到最新的代码</li>
+<li>  进行主分支的合并(如果你每天都拉去合并主分支最新代码的话，此时基本上不会存在太多的冲突)</li>
+<li>  合并完成后，将主分支合并到开发分支，保持最新代码进行下一步开发</li>
 </ul>
 </li>
-<li><p>完结撒花！</p>
+<li><p>  完结撒花！</p>
 </li>
 </ul>
 <h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>此篇介绍了一部分 git 的基础操作命令，但是 git 版本控制的优势远不仅如此，下一篇会罗列一些 git 高级操作的命令，下回见啦。</p>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">git 官方文档</a></p>
-<p><a href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1" target="_blank" rel="noopener">有用的git命令，动图展示</a></p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a class="link" href="https://git-scm.com/book/zh/v2">git 官方文档<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link" href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1">有用的git命令，动图展示<i class="fas fa-external-link-alt"></i></a></p>
 <h2 id="-1"><a href="#-1" class="headerlink" title></a></h2>]]></content>
       <categories>
         <category>DevOps</category>
@@ -253,10 +229,10 @@
 <p><img src="/2020/11/20/MYSQL%E6%80%BB%E4%BD%93%E6%A6%82%E8%A7%88/image-20201117231229542.png" alt="image-20201117231229542"></p>
 <h3 id="存储引擎层"><a href="#存储引擎层" class="headerlink" title="存储引擎层"></a>存储引擎层</h3><ul>
 <li><p>MyISAM</p>
-<p>B+树结构，所有索引树都为非聚集索引，不支持事务，不支持行锁</p>
+<p>  B+树结构，所有索引树都为非聚集索引，不支持事务，不支持行锁</p>
 </li>
 <li><p>InnoDB</p>
-<p>B+树结构，主键索引树为聚集索引，其他索引树为非聚集索引，支持事务，支持行锁，基于MVCC（多版本并发控制）的事务安全。mysql 5.5 版本后的默认存储引擎。</p>
+<p>  B+树结构，主键索引树为聚集索引，其他索引树为非聚集索引，支持事务，支持行锁，基于MVCC（多版本并发控制）的事务安全。mysql 5.5 版本后的默认存储引擎。</p>
 </li>
 </ul>
 <h3 id="文件系统层"><a href="#文件系统层" class="headerlink" title="文件系统层"></a>文件系统层</h3><h4 id="binlog"><a href="#binlog" class="headerlink" title="binlog"></a>binlog</h4><p>​    回滚日志，顾名思义，mysql的回滚需要借助binlog来进行实现。</p>
