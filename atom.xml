@@ -3,11 +3,11 @@
   <title>Hey, know it!</title>
   
   <subtitle>Hey, know it!</subtitle>
-  <link href="http://www.heyknowit.com/atom.xml" rel="self"/>
+  <link href="http://47.101.178.174/atom.xml" rel="self"/>
   
-  <link href="http://www.heyknowit.com/"/>
+  <link href="http://47.101.178.174/"/>
   <updated>2021-02-19T10:13:08.466Z</updated>
-  <id>http://www.heyknowit.com/</id>
+  <id>http://47.101.178.174/</id>
   
   <author>
     <name>John Doe</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>MYSQL总体概览</title>
-    <link href="http://www.heyknowit.com/2020/11/20/MYSQL%E6%80%BB%E4%BD%93%E6%A6%82%E8%A7%88/"/>
-    <id>http://www.heyknowit.com/2020/11/20/MYSQL%E6%80%BB%E4%BD%93%E6%A6%82%E8%A7%88/</id>
+    <link href="http://47.101.178.174/2020/11/20/MYSQL%E6%80%BB%E4%BD%93%E6%A6%82%E8%A7%88/"/>
+    <id>http://47.101.178.174/2020/11/20/MYSQL%E6%80%BB%E4%BD%93%E6%A6%82%E8%A7%88/</id>
     <published>2020-11-20T08:45:41.000Z</published>
     <updated>2021-02-19T10:13:08.466Z</updated>
     
@@ -29,17 +29,17 @@
     
     
     
-    <category term="Database" scheme="http://www.heyknowit.com/categories/Database/"/>
+    <category term="Database" scheme="http://47.101.178.174/categories/Database/"/>
     
     
-    <category term="mysql" scheme="http://www.heyknowit.com/tags/mysql/"/>
+    <category term="mysql" scheme="http://47.101.178.174/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>Git操作指北基础篇</title>
-    <link href="http://www.heyknowit.com/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
-    <id>http://www.heyknowit.com/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/</id>
+    <link href="http://47.101.178.174/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    <id>http://47.101.178.174/2020/07/13/Git%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8C%97%E5%9F%BA%E7%A1%80%E7%AF%87/</id>
     <published>2020-07-13T08:33:57.000Z</published>
     <updated>2021-02-19T10:09:56.431Z</updated>
     
@@ -61,10 +61,10 @@
     
     
     
-    <category term="DevOps" scheme="http://www.heyknowit.com/categories/DevOps/"/>
+    <category term="DevOps" scheme="http://47.101.178.174/categories/DevOps/"/>
     
     
-    <category term="git" scheme="http://www.heyknowit.com/tags/git/"/>
+    <category term="git" scheme="http://47.101.178.174/tags/git/"/>
     
   </entry>
   
