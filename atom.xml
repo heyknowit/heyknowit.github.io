@@ -6,7 +6,7 @@
   <link href="http://www.heyknowit.com/atom.xml" rel="self"/>
   
   <link href="http://www.heyknowit.com/"/>
-  <updated>2020-11-20T09:38:34.179Z</updated>
+  <updated>2021-02-19T10:13:08.466Z</updated>
   <id>http://www.heyknowit.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://www.heyknowit.com/2020/11/20/MYSQL%E6%80%BB%E4%BD%93%E6%A6%82%E8%A7%88/"/>
     <id>http://www.heyknowit.com/2020/11/20/MYSQL%E6%80%BB%E4%BD%93%E6%A6%82%E8%A7%88/</id>
     <published>2020-11-20T08:45:41.000Z</published>
-    <updated>2020-11-20T09:38:34.179Z</updated>
+    <updated>2021-02-19T10:13:08.466Z</updated>
     
     
     <summary type="html">&lt;p&gt;这两天系统的学习了一下mysql的知识，趁热打铁总结一下。&lt;/p&gt;
@@ -29,7 +29,7 @@
     
     
     
-    <category term="数据库" scheme="http://www.heyknowit.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <category term="Database" scheme="http://www.heyknowit.com/categories/Database/"/>
     
     
     <category term="mysql" scheme="http://www.heyknowit.com/tags/mysql/"/>

@@ -239,7 +239,7 @@
 <h4 id="redolog"><a href="#redolog" class="headerlink" title="redolog"></a>redolog</h4><p>​    重做日志，主要用于mysql数据恢复，数据持久化文件。</p>
 ]]></content>
       <categories>
-        <category>数据库</category>
+        <category>Database</category>
       </categories>
       <tags>
         <tag>mysql</tag>
